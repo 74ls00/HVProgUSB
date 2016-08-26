@@ -7232,6 +7232,8 @@ by exp-project-lbr.ulp</description>
 <part name="TXLED" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="U$1" library="MyPOW" deviceset="+5V" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
+<part name="RXLED1" library="pinhead" deviceset="PINHD-1X1" device=""/>
+<part name="TXLED1" library="pinhead" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7306,6 +7308,8 @@ by exp-project-lbr.ulp</description>
 <instance part="TXLED" gate="G$1" x="45.72" y="45.72"/>
 <instance part="U$1" gate="G$1" x="43.18" y="35.56"/>
 <instance part="GND22" gate="1" x="27.94" y="15.24"/>
+<instance part="RXLED1" gate="G$1" x="45.72" y="127"/>
+<instance part="TXLED1" gate="G$1" x="45.72" y="55.88"/>
 </instances>
 <busses>
 </busses>
@@ -7637,14 +7641,21 @@ by exp-project-lbr.ulp</description>
 <wire x1="43.18" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
 <label x="25.4" y="45.72" size="1.778" layer="95"/>
 <pinref part="TXLED" gate="G$1" pin="1"/>
+<pinref part="TXLED1" gate="G$1" pin="1"/>
+<wire x1="43.18" y1="55.88" x2="43.18" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="D0(RXLED)" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="D0"/>
-<wire x1="43.18" y1="116.84" x2="22.86" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="116.84" x2="35.56" y2="116.84" width="0.1524" layer="91"/>
 <label x="25.4" y="116.84" size="1.778" layer="95"/>
 <pinref part="RXLED" gate="G$1" pin="1"/>
+<pinref part="RXLED1" gate="G$1" pin="1"/>
+<wire x1="35.56" y1="116.84" x2="22.86" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="127" x2="35.56" y2="127" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="127" x2="35.56" y2="116.84" width="0.1524" layer="91"/>
+<junction x="35.56" y="116.84"/>
 </segment>
 <segment>
 <wire x1="157.48" y1="71.12" x2="170.18" y2="71.12" width="0.1524" layer="91"/>
