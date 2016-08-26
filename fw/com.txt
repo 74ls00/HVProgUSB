@@ -1,0 +1,7 @@
+at90s8535
+
+id
+avrdude -p 8535 -P com8 -c pl2303 -B 4800 -i 500  -F
+
+write flash
+avrdude -p 8535 -P com8 -c pl2303 -B 4800 -i 400  -U flash:w:"STK500.hex":a

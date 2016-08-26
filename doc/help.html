@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>code {backgroung:#F0F0F0; margin:10px; font-size:15px;}
+/*content{background:#E4E4E4;padding:5px;width:850px;float:left;}*/
+.block{background:#E4E4E4;padding:5px;margin:5px;float:left;width:850px;}
+table{border-spacing:20px 0;}
+</style>
+</head><body>
+<div id="content">
+
+<div class="block">
+<h3>Список файлов</h3>
+<table>
+<tr><td>adapters/</td><td>адаптеры</td></tr>
+<tr><td>export/</td><td>экспортированные платы и схемы из eagle в png и из них в pdf</td></tr>
+<tr><td>fw/</td><td></td></tr>
+<tr><td>fw/avrdude.conf</td><td>изменённый конфиг avrdude</td></tr>
+<tr><td>fw/avrdude.exe</td><td>заодно и сам avrdude</td></tr>
+<tr><td>fw/com.txt</td><td>список комманд avrdude для прошивки</td></tr>
+<tr><td>fw/EBN2HEX.exe</td><td>конвертер .ebn в intel .hex</td></tr>
+<tr><td>fw/fw_md5.txt</td><td>список версий прошивок</td></tr>
+<tr><td>fw/STK500.ebn</td><td>прошивка STK500</td></tr>
+<tr><td>fw/STK500.hex</td><td>конвертированная прошивка STK500</td></tr>
+<tr><td>fw/STK500.exe</td><td></td></tr>
+<tr><td>fw/STK500.pdf</td><td>схема оригинального STK500, без последней страници с чертежом платы</td></tr>
+<tr><td></td><td>полный файл:
+STK500_Schematics.pdf 307кб MD5: 0A88D07B66FA626C891EF88E20FAB595
+на 10 странице расположение элементов на плате</td></tr>
+<tr><td>gerber/</td><td>папка с экспортированными чертежами плат из eagle под производство, из них создаётся файл SL6, который удобнее для печати на принтере</td></tr>
+<tr><td>sprint/</td><td>исходники на autoit для кнопки ускоряющей импорт gerber в SL6</td></tr>
+<tr><td>DESCRIPTION,&nbsp;eagle.epf</td><td>описание и параметры проекта eagle</td></tr>
+<tr><td>HWProgUSB.sch</td><td>схема в eagle</td></tr>
+<tr><td>HWProgUSB.brd</td><td>плата в eagle</td></tr>
+<tr><td>ExportGerber.cam</td><td>задание eagle для экспорта gerber</td></tr>
+<tr><td>DesignRules.dru</td><td>правила проектирования eagle, мой вариант</td></tr>
+<tr><td>HWProgUSB.lbr</td><td>библиотека в eagle на основе схемы</td></tr>
+<tr><td>HWProgUSB.lay6</td><td>плата в SL6 из gerber</td></tr>
+<tr><td>GerberAImport4SL6(x86).exe</td><td>добавляет кнопку в импорт SL6 для ускорения</td></tr>
+<tr><td>GerberAImport4SL6(x64).exe</td><td>версия для x64, отличий от x86 нет</td></tr>
+<tr><td>GerberAImport4SL6.ini</td><td>настройки импорта. При удалении создаётся, возможно потребуется изменить</td></tr>
+<tr><td>packHWProgPro7z.bat</td><td>упаковка всего проекта в архив с исключением промежуточных файлов по packHWProgPro7z.txt. Архив создаётся в папке backup/</td></tr>
+</table></div>
+
+
+
+
+<div class="block">
+<h3>Проверка USB UART</h3>
+<p>Устройство определяется как Prolific USB-to-Serial Comm Port (COM8)</p><img src="images/devmgr-prolific.png">
+<p>Для проверки перемкнуть J1 J2</p><img src="images/j1j2-jumper.png">
+<p>Запустить PuTTY, указать COM порт, открыть порт ("Open")</p><img src="images/putty1.png">
+<p>Появится консоль PuTTY</p><img src="images/putty2.png">
+<p>Пока установлена перемычка, весь набранный текст будет появлятся в окне</p><img src="images/putty3.png">
+</div><div class="block">
+<h3>Первая прошивка</h3>
+<p>Установить перемычки JR, JO, JS, JI</p><img src="images/jisp8535.png">
+<br>
+<p>Модифицированный avrdude.conf</p>
+<code>programmer<br>
+  id    = "pl2303";<br>
+  desc  = "pl2303 serial, reset=!txd sck=!rts mosi=!dtr miso=!cts";<br>
+  type  = "serbb";<br>
+  connection_type = serial;<br>
+  reset = ~3;<br>
+  sck   = ~7;<br>
+  mosi  = ~4;<br>
+  miso  = ~8;<br>
+;
+</code>
+<p>В моём случае попался AT90S8535, маркированный как ATMEGA8535 16AU<br>получил сигнатуру (0x1e9303):</p>
+<code>avrdude -p 8535 -P com8 -c pl2303 -B 4800 -i 500  -F</code>
+<p>прошил:</p>
+<code>avrdude -p 8535 -P com8 -c pl2303 -B 4800 -i 400  -U flash:w:"STK500.hex":a</code>
+<p>прошивка таким способом заняла 26мин</p>
+</div><div class="block">
+<h3>Ссылки</h3>
+<a href="http://www.der-hammer.info/hvprog/index_en.htm">der-Hammer  HVProg</a><br>
+<a href="http://radiokot.ru/lab/controller/41/">Доработка программатора HVPro</a>,&nbsp;<a href="http://www.radiokot.ru/forum/viewtopic.php?t=29205">форум</a><br>
+<a href="http://electronix.ru/forum/lofiversion/index.php/t42674.html">EBN2HEX by Proton</a><br>
+<a href="https://youtu.be/YpW_4brk9To">Автоматический импорт в Sprint-Layout 6 из EAGLE. видео</a><br>
+</div>
+
+</div>
+</body>
+</html>
