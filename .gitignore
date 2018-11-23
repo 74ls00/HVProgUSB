@@ -15,7 +15,7 @@ HVProg.dev
 
 
 
-
+*.epf
 *.bak
 *.lnk
 *.log
@@ -48,3 +48,4 @@ HVProg.dev
 *.l#9
 *.pro
 *.job
+
