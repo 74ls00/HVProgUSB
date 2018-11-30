@@ -28,6 +28,7 @@ HVProg.dev
 *.b#7
 *.b#8
 *.b#9
+*.gpi
 *.s#1
 *.s#2
 *.s#3
@@ -49,3 +50,5 @@ HVProg.dev
 *.pro
 *.job
 
+/adapters/ZIF_QFP48/GerberAImport4SL6(x86).exe
+/adapters/ZIF_QFP48/GerberAImport4SL6.ini
