@@ -50,5 +50,6 @@ HVProg.dev
 *.pro
 *.job
 
-/adapters/ZIF_QFP48/GerberAImport4SL6(x86).exe
-/adapters/ZIF_QFP48/GerberAImport4SL6.ini
+
+/adapters/ZIF_QFP32/GerberAImport4SL6(x86).exe
+/adapters/ZIF_QFP32/GerberAImport4SL6.ini
