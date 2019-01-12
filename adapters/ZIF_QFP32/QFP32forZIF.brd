@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -248,56 +248,6 @@ by exp-project-lbr.ulp</description>
 <wire x1="46.99" y1="3.4925" x2="46.99" y2="-3.81" width="0.127" layer="21"/>
 <wire x1="46.99" y1="-3.81" x2="-4.1275" y2="-3.81" width="0.127" layer="21"/>
 <wire x1="-4.1275" y1="-3.81" x2="-4.1275" y2="3.4925" width="0.127" layer="21"/>
-</package>
-</packages>
-</library>
-<library name="AdapterQFP48forZIF">
-<packages>
-<package name="ADAPTERQFP48FORZIF">
-<pad name="P$1" x="-7.62" y="22.86" drill="0.9" shape="square"/>
-<pad name="P$5" x="-7.62" y="12.7" drill="0.9"/>
-<pad name="P$6" x="-7.62" y="10.16" drill="0.9"/>
-<pad name="P$7" x="-7.62" y="7.62" drill="0.9"/>
-<pad name="P$8" x="-7.62" y="5.08" drill="0.9"/>
-<pad name="P$9" x="-7.62" y="2.54" drill="0.9"/>
-<pad name="P$10" x="-7.62" y="0" drill="0.9"/>
-<pad name="P$11" x="-7.62" y="-2.54" drill="0.9"/>
-<pad name="P$12" x="-7.62" y="-5.08" drill="0.9"/>
-<pad name="P$13" x="-7.62" y="-7.62" drill="0.9"/>
-<pad name="P$14" x="-7.62" y="-10.16" drill="0.9"/>
-<pad name="P$15" x="-7.62" y="-12.7" drill="0.9"/>
-<pad name="P$16" x="-7.62" y="-15.24" drill="0.9"/>
-<pad name="P$17" x="-7.62" y="-17.78" drill="0.9"/>
-<pad name="P$18" x="-7.62" y="-20.32" drill="0.9"/>
-<pad name="P$19" x="-7.62" y="-22.86" drill="0.9"/>
-<pad name="P$20" x="-7.62" y="-25.4" drill="0.9"/>
-<pad name="P$21" x="7.62" y="-25.4" drill="0.9"/>
-<pad name="P$22" x="7.62" y="-22.86" drill="0.9"/>
-<pad name="P$23" x="7.62" y="-20.32" drill="0.9"/>
-<pad name="P$24" x="7.62" y="-17.78" drill="0.9"/>
-<pad name="P$25" x="7.62" y="-15.24" drill="0.9"/>
-<pad name="P$26" x="7.62" y="-12.7" drill="0.9"/>
-<pad name="P$27" x="7.62" y="-10.16" drill="0.9"/>
-<pad name="P$28" x="7.62" y="-7.62" drill="0.9"/>
-<pad name="P$29" x="7.62" y="-5.08" drill="0.9"/>
-<pad name="P$30" x="7.62" y="-2.54" drill="0.9"/>
-<pad name="P$31" x="7.62" y="0" drill="0.9"/>
-<pad name="P$32" x="7.62" y="2.54" drill="0.9"/>
-<pad name="P$33" x="7.62" y="5.08" drill="0.9"/>
-<pad name="P$34" x="7.62" y="7.62" drill="0.9"/>
-<pad name="P$35" x="7.62" y="10.16" drill="0.9"/>
-<pad name="P$36" x="7.62" y="12.7" drill="0.9"/>
-<pad name="P$39" x="7.62" y="20.32" drill="0.9"/>
-<pad name="P$40" x="7.62" y="22.86" drill="0.9"/>
-<wire x1="15.24" y1="25.4" x2="15.24" y2="-27.94" width="0.254" layer="21"/>
-<wire x1="-15.24" y1="25.4" x2="-15.24" y2="-27.94" width="0.254" layer="21"/>
-<wire x1="-15.24" y1="-27.94" x2="15.24" y2="-27.94" width="0.254" layer="21"/>
-<wire x1="-15.24" y1="25.4" x2="15.24" y2="25.4" width="0.254" layer="21"/>
-<text x="-4.1275" y="3.175" size="1.27" layer="21">NO.SA636</text>
-<text x="-4.445" y="0.635" size="1.27" layer="21">QFP32/D32</text>
-<text x="-3.4925" y="5.715" size="1.27" layer="21">NO.B003</text>
-<pad name="P$2" x="-7.62" y="20.32" drill="0.9" shape="square"/>
-<text x="-6.35" y="-1.905" size="1.27" layer="21">IC51-0324-1498</text>
 </package>
 </packages>
 </library>
@@ -1412,6 +1362,56 @@ wave soldering</description>
 </package>
 </packages>
 </library>
+<library name="QFP32forZIF">
+<packages>
+<package name="ADAPTERQFP48FORZIF">
+<pad name="P$1" x="-7.62" y="22.86" drill="0.9" shape="square"/>
+<pad name="P$5" x="-7.62" y="12.7" drill="0.9"/>
+<pad name="P$6" x="-7.62" y="10.16" drill="0.9"/>
+<pad name="P$7" x="-7.62" y="7.62" drill="0.9"/>
+<pad name="P$8" x="-7.62" y="5.08" drill="0.9"/>
+<pad name="P$9" x="-7.62" y="2.54" drill="0.9"/>
+<pad name="P$10" x="-7.62" y="0" drill="0.9"/>
+<pad name="P$11" x="-7.62" y="-2.54" drill="0.9"/>
+<pad name="P$12" x="-7.62" y="-5.08" drill="0.9"/>
+<pad name="P$13" x="-7.62" y="-7.62" drill="0.9"/>
+<pad name="P$14" x="-7.62" y="-10.16" drill="0.9"/>
+<pad name="P$15" x="-7.62" y="-12.7" drill="0.9"/>
+<pad name="P$16" x="-7.62" y="-15.24" drill="0.9"/>
+<pad name="P$17" x="-7.62" y="-17.78" drill="0.9"/>
+<pad name="P$18" x="-7.62" y="-20.32" drill="0.9"/>
+<pad name="P$19" x="-7.62" y="-22.86" drill="0.9"/>
+<pad name="P$20" x="-7.62" y="-25.4" drill="0.9"/>
+<pad name="P$21" x="7.62" y="-25.4" drill="0.9"/>
+<pad name="P$22" x="7.62" y="-22.86" drill="0.9"/>
+<pad name="P$23" x="7.62" y="-20.32" drill="0.9"/>
+<pad name="P$24" x="7.62" y="-17.78" drill="0.9"/>
+<pad name="P$25" x="7.62" y="-15.24" drill="0.9"/>
+<pad name="P$26" x="7.62" y="-12.7" drill="0.9"/>
+<pad name="P$27" x="7.62" y="-10.16" drill="0.9"/>
+<pad name="P$28" x="7.62" y="-7.62" drill="0.9"/>
+<pad name="P$29" x="7.62" y="-5.08" drill="0.9"/>
+<pad name="P$30" x="7.62" y="-2.54" drill="0.9"/>
+<pad name="P$31" x="7.62" y="0" drill="0.9"/>
+<pad name="P$32" x="7.62" y="2.54" drill="0.9"/>
+<pad name="P$33" x="7.62" y="5.08" drill="0.9"/>
+<pad name="P$34" x="7.62" y="7.62" drill="0.9"/>
+<pad name="P$35" x="7.62" y="10.16" drill="0.9"/>
+<pad name="P$36" x="7.62" y="12.7" drill="0.9"/>
+<pad name="P$39" x="7.62" y="20.32" drill="0.9"/>
+<pad name="P$40" x="7.62" y="22.86" drill="0.9"/>
+<wire x1="15.24" y1="25.4" x2="15.24" y2="-27.94" width="0.254" layer="21"/>
+<wire x1="-15.24" y1="25.4" x2="-15.24" y2="-27.94" width="0.254" layer="21"/>
+<wire x1="-15.24" y1="-27.94" x2="15.24" y2="-27.94" width="0.254" layer="21"/>
+<wire x1="-15.24" y1="25.4" x2="15.24" y2="25.4" width="0.254" layer="21"/>
+<text x="-4.1275" y="3.175" size="1.27" layer="21">NO.SA636</text>
+<text x="-4.445" y="0.635" size="1.27" layer="21">QFP32/D32</text>
+<text x="-3.4925" y="5.715" size="1.27" layer="21">NO.B003</text>
+<pad name="P$2" x="-7.62" y="20.32" drill="0.9" shape="square"/>
+<text x="-6.35" y="-1.905" size="1.27" layer="21">IC51-0324-1498</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1622,7 +1622,7 @@ wave soldering</description>
 <attribute name="NAME" x="30.48" y="21.2725" size="1.27" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="28.8925" y="21.2725" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="U$14" library="AdapterQFP48forZIF" package="ADAPTERQFP48FORZIF" value="SA636-40" x="49.8475" y="39.0525"/>
+<element name="U$14" library="QFP32forZIF" package="ADAPTERQFP48FORZIF" value="SA636-40" x="49.8475" y="39.0525"/>
 <element name="ISP" library="con-lstb" package="MA03-2" value="" x="27.94" y="18.415" smashed="yes" rot="R270">
 <attribute name="NAME" x="26.9875" y="23.876" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="23.749" y="19.685" size="1.27" layer="27" ratio="10" rot="R270"/>
